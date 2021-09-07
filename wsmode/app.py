@@ -51,6 +51,8 @@ class OKExRunner(WebSocketClient):
 
     def received_message(self, resp):
         print("接收到ws服务器信息：", resp)
+        if str(resp) == "pong":
+            return
         json_msg = json.loads(str(resp))
         if json_msg.get("event"):
             pass
@@ -64,7 +66,7 @@ class OKExRunner(WebSocketClient):
         TODO: 发送心跳数据
         @return:
         """
-        ping = '{"event":"ping"}'
+        ping = 'ping' or '{"event":"ping"}'
         while True:
             time.sleep(30)  # 每隔30秒交易所服务器发送心跳信息
             sent = False

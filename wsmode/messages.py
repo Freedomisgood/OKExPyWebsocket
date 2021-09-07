@@ -62,6 +62,11 @@ class LoginTopicMessage(TopicMessage):
     pass
 
 
+@register_topic_message("positions")
+class PositionsTopicMessage(TopicMessage):
+    pass
+
+
 @register_topic_message("balance_and_position")
 class BalanceAndPositionTopicMessage(TopicMessage):
     pass
@@ -72,9 +77,18 @@ class OrderTopicMessage(TopicMessage):
     pass
 
 
+@register_topic_message("orders")
+class OrdersTopicMessage(TopicMessage):
+    pass
+
+
 @register_topic_message("instruments")
 class InstrumentsTopicMessage(TopicMessage):
     pass
 
+
+@register_topic_message("tickers")
+class TickersTopicMessage(TopicMessage):
+    pass
 
 # ----------------------- ↑↑↑↑↑ 具体的消息类型 ↑↑↑↑↑ ----------------------- #
